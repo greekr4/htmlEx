@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * { margin: 0; padding: 0;}
+        div{
+            position:relative;
+            left: 100px;
+            top: 50px;
+        }
+        div input{
+            width: 150px;
+        }
+        div.res{
+            top: 70px;
+        }
+        div.more{
+            top:80px
+        }
+        button /*#print,#resultbtn*/
+        {
+            position:relative;
+            top: 5px;
+            width: 150px;
+        }
+        textarea#result{
+               width: 150px;
+               resize: none;
+        }
+    </style>
+    <script>
+        function fn1(){
+            var f = document.getElementById("result");
+            f.value = "git config --global user.name \""+(id.value)+ "\" && git config --global user.email \""
+            +(email.value)+"\" && git remote add origin " + (adress.value);
+            return;
+        }
+
+
+        function copy(){
+            var copyText = document.getElementById("result");
+            copyText.select();
+            document.execCommand("Copy");
+            alert("Complete");
+            return;
+        }
+    </script>
+</head>
+<body>
+    <div>
+        <input type="text" value="" id="id" placeholder="id" ><br>
+        <input type="text" value="" id="email" placeholder="email"><br>
+        <input type="text" value="" id="adress" placeholder="주소"><br>
+        <button onclick="fn1()" id="print">출력</button><br>
+    </div>
+
+    <div class="res">
+        <textarea name="" id="result" cols="30" rows="5"></textarea><br>
+        <button onclick="copy()" id="resultbtn">복사</button>
+    </div>
+
+    <div class="more">
+
+        <button>강제pull</button><br>
+        <button>강제push</button>
+    </div>
+
+
+    <!-- 
+    git stash && git pull origin master && git stash pop
+
+    git add . && git commit -m "oo" && git push -u origin master 
+-->
+
+</body>
+</html>
